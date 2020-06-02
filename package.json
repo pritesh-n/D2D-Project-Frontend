@@ -1,0 +1,47 @@
+{
+  "name": "D2D-Project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev -p 4001",
+    "start": "set NODE_ENV=production&&next start",
+    "build": "./node_modules/.bin/gulp build --production=true && next build",
+    "watch": "./node_modules/.bin/gulp watch",
+    "build:prod": "./node_modules/.bin/gulp build --production=true"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.0.0",
+    "next": "^9.4.2",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "url-loader": "^4.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-append-prepend": "^1.0.8",
+    "gulp-if": "^3.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "postcss-combine-media-query": "^1.0.0",
+    "postcss-comment": "^2.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-nested": "^4.2.1",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-purgecss": "^2.0.3",
+    "postcss-sort-media-queries": "^1.4.23",
+    "yargs": "^15.1.0"
+  }
+}

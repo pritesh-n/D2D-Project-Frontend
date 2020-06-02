@@ -1,0 +1,1 @@
+{"version":3,"sources":["_core/base.css","search.css"],"names":[],"mappings":"AAAA;EACE,gBAAgB;AAClB;;ACAA;EACE,eAAe;EACf,gBAAgB;AAClB","file":"search.css","sourcesContent":["body {\r\n  background: #fff;\r\n}\r\n","@import \"./_core/base.css\";\r\n\r\nbody {\r\n  font-size: 50px;\r\n  background: #ddd;\r\n}\r\n"]}

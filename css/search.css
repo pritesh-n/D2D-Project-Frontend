@@ -1,0 +1,6 @@
+@import "./_core/base.css";
+
+body {
+  font-size: 50px;
+  background: #ddd;
+}
