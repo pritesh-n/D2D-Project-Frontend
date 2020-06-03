@@ -26,13 +26,17 @@ export default class MyApp extends App {
         <Head>
           <title>FunFiesta - {Component.name}</title>
           <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+          ></link>
+          <link
             href={`/static/css/${Component.name.toLowerCase()}.css`}
             rel="stylesheet"
             key="test"
           />
           <meta name="robots" content="noindex,nofollow" />
         </Head>
-        <Layout>
+        <Layout componentName={Component.name.toLowerCase()}>
           <Component {...pageProps} />
         </Layout>
       </React.Fragment>

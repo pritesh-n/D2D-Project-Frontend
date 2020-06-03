@@ -1,16 +1,34 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Header = () => {
+const Header = ({ toggleClass, searchTerm, updateSearch, onSearchSubmit }) => {
   return (
     <header>
       <div className="container header__wrapper">
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon
+          icon={faBars}
+          className="menu__icon"
+          onClick={() =>
+            toggleClass(".menu__header", {
+              className: "open",
+              action: "add",
+            })
+          }
+        />
         <a className="logo__head">
           <img src="/static/images/logo.svg" />
         </a>
         <ul className="menu__header">
+          <FontAwesomeIcon
+            icon={faTimes}
+            className="close__icon"
+            onClick={() =>
+              toggleClass(".menu__header", {
+                className: "open",
+                action: "remove",
+              })
+            }
+          />
           <li>
             <a href="/entertainment">Entertainment</a>
           </li>
@@ -24,8 +42,32 @@ const Header = () => {
             <a href="/lifestyle">Lifestyle</a>
           </li>
         </ul>
-        <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon
+          icon={faSearch}
+          className="search__icon"
+          onClick={(e) => {
+            toggleClass(".search__form", {
+              className: "open",
+              action: "toggle",
+            });
+            document.querySelector(".search__form").classList.contains("open")
+              ? document.querySelector(".search__input").focus()
+              : document.querySelector(".search__input").blur();
+          }}
+        />
       </div>
+      <form
+        className="search__form"
+        id="search__form"
+        onSubmit={onSearchSubmit}
+      >
+        <input
+          name="search"
+          className="search__input"
+          value={searchTerm}
+          onChange={(e) => updateSearch(e.target.value)}
+        />
+      </form>
     </header>
   );
 };

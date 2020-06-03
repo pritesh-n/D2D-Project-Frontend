@@ -1,3 +1,24 @@
+@import "./normalize.css";
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: #fff;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 15px;
+}
+
+.main__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1;
 }

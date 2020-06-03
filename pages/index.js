@@ -1,18 +1,19 @@
 import { getGalleries } from "../helpers/api";
+import Hero from "../components/sections/Hero";
 
-const Home = ({ name }) => {
+const Home = ({ data }) => {
+  const articles = [...data];
   return (
-    <div>
-      {name}
-      <span>sdawdawdd</span>
-    </div>
+    <>
+      <Hero results={articles.splice(0, 3)} />
+    </>
   );
 };
 
 Home.getInitialProps = async ({ req, query }) => {
   const data = await getGalleries({
     params: {
-      limit: 1,
+      limit: 40,
       meta_info: true,
     },
   });

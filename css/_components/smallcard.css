@@ -1,0 +1,6 @@
+.small__card {
+  margin: 10px 0px;
+  .image {
+    width: 100%;
+  }
+}
