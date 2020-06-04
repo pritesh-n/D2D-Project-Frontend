@@ -1,0 +1,8 @@
+footer {
+  width: 100%;
+  background: var(--primary-color);
+  color: #fff;
+}
+.footer__wrapper {
+  justify-content: center;
+}

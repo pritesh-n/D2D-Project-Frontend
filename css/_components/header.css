@@ -7,6 +7,7 @@ header {
   top: 0;
   box-shadow: 5px 0px 20px #ddd;
   background: #fff;
+  z-index: 999;
 }
 
 .header__wrapper {
@@ -48,6 +49,12 @@ header {
   padding: 20px;
   transition: 0.3s ease;
   z-index: 999;
+  .heading {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
   li {
     margin-bottom: 20px;
     a {
@@ -78,4 +85,8 @@ header {
   border: none;
   background: rgba(100, 140, 170, 0.75);
   padding: 15px;
+  color: #fff;
+  &::placeholder {
+    color: #fff;
+  }
 }

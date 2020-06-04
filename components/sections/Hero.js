@@ -4,12 +4,12 @@ import SmallCard from "../cards/SmallCard";
 
 const Hero = ({ results }) => {
   return (
-    <div className="hero__section">
+    <div className="hslider__wrapper">
       <Slider
         {...{
           dots: false,
           speed: 500,
-          slidesToShow: 1,
+          slidesToShow: 1.2,
           slidesToScroll: 1,
           arrows: false,
           infinite: false,

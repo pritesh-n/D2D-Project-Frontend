@@ -1,0 +1,9 @@
+.hslider__wrapper {
+  .slick-list {
+    padding-left: 15px;
+  }
+  .slick-slide {
+    padding-right: 30px;
+    padding-bottom: 15px;
+  }
+}

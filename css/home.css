@@ -1,8 +1,11 @@
 @import "./_core/base.css";
-@import "./_components/layout.css";
 @import "./_components/smallcard.css";
-@import "/node_modules/slick-carousel/slick/slick.css";
-@import "/node_modules/slick-carousel/slick/slick-theme.css";
+@import "./_components/slick.css";
+@import "./_components/slick-theme.css";
+@import "./_components/horizontal-slider.css";
+@import "./_components/roundcard.css";
 .hero__section {
-  max-width: 100%;
+  .section__title {
+    padding-left: 15px;
+  }
 }

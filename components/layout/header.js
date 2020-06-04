@@ -29,6 +29,7 @@ const Header = ({ toggleClass, searchTerm, updateSearch, onSearchSubmit }) => {
               })
             }
           />
+          <li className="heading">Categories</li>
           <li>
             <a href="/entertainment">Entertainment</a>
           </li>
@@ -66,6 +67,7 @@ const Header = ({ toggleClass, searchTerm, updateSearch, onSearchSubmit }) => {
           className="search__input"
           value={searchTerm}
           onChange={(e) => updateSearch(e.target.value)}
+          placeholder="Search..."
         />
       </form>
     </header>

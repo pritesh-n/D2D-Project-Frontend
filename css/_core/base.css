@@ -1,5 +1,6 @@
 @import "./normalize.css";
 @import "./variables.css";
+@import "../_components/layout.css";
 
 * {
   box-sizing: border-box;

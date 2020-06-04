@@ -1,0 +1,27 @@
+.round__card {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: 8px 0px;
+  padding: 10px;
+  border-radius: 27px;
+  background: #ffffff;
+  box-shadow: -9px 9px 18px #d6d6d6, 9px -9px 18px #ffffff;
+  .image {
+    width: 80px;
+    height: 80px;
+    border-radius: 39px;
+    background: #ffffff;
+    box-shadow: inset -7px 7px 14px #d6d6d6, inset 7px -7px 14px #ffffff;
+  }
+  .card__info {
+    padding-left: 10px;
+  }
+  .category {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+  }
+  .title {
+    font-size: 1rem;
+  }
+}

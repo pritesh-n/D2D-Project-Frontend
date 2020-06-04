@@ -1,15 +1,16 @@
 import LazyLoad from "react-lazyload";
+import Image from "./Image";
 
 const SmallCard = ({ article }) => {
   return (
     <div className="small__card">
-      <img
-        key={article.image_url}
-        src={`http://localhost:5001/images/${article.image_url}_small.jpg`}
-        className="image"
-      />
-      <h3 className="category">{article.category}</h3>
-      <h2 className="title">{article.title}</h2>
+      <LazyLoad once height={200} offset={100}>
+        <Image name={article.image_url} />
+      </LazyLoad>
+      <div className="card__info">
+        <h3 className="category">{article.category}</h3>
+        <h2 className="title">{article.title}</h2>
+      </div>
     </div>
   );
 };
