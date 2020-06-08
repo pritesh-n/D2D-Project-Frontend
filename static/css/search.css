@@ -155,6 +155,7 @@ sup {
 
 img {
   border-style: none;
+  max-width: 100%;
 }
 
 /* Forms
@@ -502,6 +503,10 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   flex: 1;
+}
+
+.adunitContainer {
+  text-align: center;
 }
 
 body {

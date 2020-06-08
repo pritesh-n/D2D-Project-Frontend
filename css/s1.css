@@ -1,0 +1,10 @@
+@import "./_core/base.css";
+@import "./_components/postcard.css";
+@import "./_components/smallcard.css";
+@import "./_components/roundcard.css";
+
+.post__container {
+  .post__card {
+    margin-bottom: 15px;
+  }
+}

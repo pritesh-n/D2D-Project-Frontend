@@ -27,8 +27,10 @@ export default class MyApp extends App {
           <Head>
             <title>FunFiesta - {Component.name}</title>
             <link
+              rel="preload"
               href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
-              rel="stylesheet"
+              as="style"
+              onLoad="this.onload=null;this.rel='stylesheet'"
             ></link>
             <link
               href={`/static/css/${Component.name.toLowerCase()}.css`}

@@ -7,7 +7,7 @@ const RoundCard = ({ article, hideImage }) => {
         <LazyLoad once height={80} offset={100}>
           <img
             key={article.image_url}
-            src={`http://localhost:5001/images/${article.image_url}_thumb.jpg`}
+            src={`${process.env.REACT_APP_IMAGE_URL}/${article.image_url}_thumb.jpg`}
             className="image"
           />
         </LazyLoad>

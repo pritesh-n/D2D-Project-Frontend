@@ -34,14 +34,16 @@ const Home = ({ data }) => {
   );
 };
 
-Home.getInitialProps = async ({ req, query }) => {
+export async function getStaticProps({ query }) {
   const data = await getGalleries({
     params: {
       limit: 40,
       meta_info: true,
     },
   });
-  return { data: data };
-};
+  return {
+    props: { data: data },
+  };
+}
 
 export default Home;
