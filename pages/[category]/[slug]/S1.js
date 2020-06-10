@@ -1,18 +1,24 @@
+import { useEffect } from "react";
 import { getGallery, getGalleries } from "../../../helpers/api";
 import map from "lodash/map";
+import { scrollAbsoluteEds } from "../../../helpers/utility";
 import LazyLoad from "react-lazyload";
 import Section from "../../../components/sections/Section";
 import PostCard from "../../../components/cards/PostCard";
 import SmallCard from "../../../components/cards/SmallCard";
 import RoundCard from "../../../components/cards/RoundCard";
-import { DFPSlotsProvider, AdSlot } from "react-dfp";
+import { DFPSlotsProvider, AdSlot, DFPManager } from "react-dfp";
 
 const S1 = ({ data, others }) => {
   let others_articles = [...others];
+
+  useEffect(() => {
+    scrollAbsoluteEds(".eds_container");
+  }, []);
+
   return (
     <DFPSlotsProvider
       dfpNetworkId="45361917"
-      lazyLoad
       singleRequest={false}
       sizeMapping={[
         {
@@ -34,21 +40,51 @@ const S1 = ({ data, others }) => {
           key={data.slug}
         />
       </Section>
-      <LazyLoad once height={250} offset={50}>
-        <div className="eds_abs_wrp">
-          <AdSlot adUnit={`FAQs_Q1_300x250_rt`} sizes={[[300, 250]]} />
-        </div>
-      </LazyLoad>
+      {/* <LazyLoad
+        height={250}
+        offset={50}
+        throttle={2000}
+        placeholder={
+          <div
+            className="eds_abs_wrp"
+            style={{ width: 300, height: 250 }}
+          ></div>
+        }
+        children={absEd}
+      /> */}
+      {/* <LazyLoad
+        height={250}
+        offset={50}
+        throttle={2000}
+        placeholder={
+          <div
+            className="eds_abs_wrp"
+            style={{ width: 300, height: 250 }}
+          ></div>
+        }
+        children={absEd}
+      /> */}
       <Section classes="container post__container">
+        <div
+          className="eds_abs_wrp"
+          id="container_0"
+          style={{ width: 300, height: 250 }}
+        ></div>
         {map(data.posts, (article, index) => {
           return (
-            <PostCard
-              title={article.title}
-              credit={article.image_credit}
-              image_url={article.image_url}
-              desc={article.content}
-              key={index}
-            />
+            <React.Fragment key={index}>
+              <PostCard
+                title={article.title}
+                credit={article.image_credit}
+                image_url={article.image_url}
+                desc={article.content}
+              />
+              <div
+                className="eds_abs_wrp"
+                id={`container_${index + 1}`}
+                style={{ width: 300, height: 250 }}
+              ></div>
+            </React.Fragment>
           );
         })}
       </Section>
@@ -65,6 +101,12 @@ const S1 = ({ data, others }) => {
           return <RoundCard article={article} key={article.slug} hideImage />;
         })}
       </Section>
+      <div className="eds_container">
+        <AdSlot adUnit={`FAQs_Q1_300x250_rt`} sizes={[[300, 250]]} />
+      </div>
+      <div className="eds_container">
+        <AdSlot adUnit={`FAQs_Q5_300x250_rt`} sizes={[[300, 250]]} />
+      </div>
     </DFPSlotsProvider>
   );
 };

@@ -616,4 +616,12 @@ body {
     margin-bottom: 15px;
   }
 
+.eds_abs_wrp {
+  background: #ddd;
+}
+
+.eds_container {
+  background: red;
+}
+
 /*# sourceMappingURL=s1.css.map */
