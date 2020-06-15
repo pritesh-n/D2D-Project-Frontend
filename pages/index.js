@@ -1,4 +1,5 @@
 import { getGalleries } from "../helpers/api";
+import Head from "next/head";
 import map from "lodash/map";
 import Hero from "../components/sections/Hero";
 import SmallCard from "../components/cards/SmallCard";
@@ -9,6 +10,9 @@ const Home = ({ data }) => {
   const articles = [...data];
   return (
     <>
+      <Head>
+        <link href={`/static/css/home.css`} rel="stylesheet" />
+      </Head>
       <Section title="Top Picks" classes="hero__section">
         <Hero results={articles.splice(0, 5)} />
       </Section>
@@ -23,7 +27,7 @@ const Home = ({ data }) => {
         })}
       </Section>
       <Section title="Popular Posts" classes="popular__section container">
-        {map(articles.splice(0, 5), (article) => {
+        {map(articles.splice(0, 6), (article) => {
           return <SmallCard article={article} key={article.slug} />;
         })}
         {map(articles.splice(0, 4), (article) => {
@@ -37,7 +41,7 @@ const Home = ({ data }) => {
 export async function getStaticProps({ query }) {
   const data = await getGalleries({
     params: {
-      limit: 40,
+      limit: 30,
       meta_info: true,
     },
   });

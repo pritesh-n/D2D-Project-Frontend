@@ -4,7 +4,7 @@ import Image from "./Image";
 const PostCard = ({ title, image_url, credit, desc }) => {
   return (
     <div className="post__card">
-      <LazyLoad once height={225} offset={50}>
+      <LazyLoad once height={225} offset={250}>
         <Image name={image_url} />
       </LazyLoad>
       <div className="card__info">

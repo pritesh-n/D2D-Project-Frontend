@@ -17,20 +17,28 @@
   }
   .category {
     color: var(--primary-color);
-    font-size: 0.9rem;
+    font-size: 1em;
     text-decoration: underline;
     text-transform: capitalize;
   }
   .title {
-    font-size: 1.03rem;
+    font-size: 1.2em;
     color: var(--black);
     line-height: 1.3;
-    height: calc(2.53 * 1.03rem);
+    height: calc(2.53 * 1.3em);
     overflow: hidden;
     text-overflow: ellipsis;
     a {
       color: inherit;
       text-decoration: none;
+    }
+  }
+}
+
+@media (width >= 991px) {
+  .small__card {
+    .image {
+      height: 300px;
     }
   }
 }

@@ -6,13 +6,13 @@
     border-radius: inherit;
   }
   .card__info {
-    padding: 0px 15px;
+    padding: 0px 15px 5px;
   }
   .credits {
-    font-size: 0.8rem;
+    font-size: 0.8em;
   }
   .desc {
-    font-size: 1rem;
+    font-size: 1.1em;
     line-height: 1.5;
     text-align: center;
   }

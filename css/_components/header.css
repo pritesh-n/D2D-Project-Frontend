@@ -14,20 +14,21 @@ header {
   justify-content: space-between;
   align-items: center;
   background: inherit;
-  position: relative;
-  z-index: 10;
 }
 .search__icon {
   width: 20px;
+  cursor: pointer;
 }
 .menu__icon {
   width: 20px;
+  cursor: pointer;
 }
 .close__icon {
   width: 15px;
   display: block;
   margin-left: auto;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .logo__head {
   display: block;
@@ -51,7 +52,7 @@ header {
   z-index: 999;
   .heading {
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.5em;
     text-transform: uppercase;
     text-decoration: underline;
   }
@@ -59,7 +60,7 @@ header {
     margin-bottom: 20px;
     a {
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.3em;
       font-weight: 600;
       color: var(--primary-color);
     }

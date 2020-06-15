@@ -10,8 +10,65 @@
 }
 
 .eds_abs_wrp {
-  background: #ddd;
+  background: #eee;
+  margin: 0px auto 15px;
 }
 .eds_container {
-  background: red;
+  background: #ccc;
+}
+.small__ed {
+  margin-bottom: 15px;
+  width: 300px;
+  height: 250px;
+  background: #eee;
+}
+
+.trending__section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .section__title {
+    flex-basis: 100%;
+  }
+}
+
+@media (width >= 1100px) {
+  .eds_abs_wrp {
+    width: 728px;
+    height: 90px;
+  }
+  .left__wrapper {
+    display: inline-block;
+    width: calc(100% - 300px);
+    vertical-align: top;
+    padding-right: 20px;
+  }
+  .right__wrapper {
+    display: inline-block;
+    width: 300px;
+  }
+  .section__title {
+    font-size: 1.5em;
+  }
+  .round__card {
+    margin-bottom: 15px;
+    .title {
+      font-size: 0.9em;
+    }
+    .category {
+      font-size: 0.8em;
+    }
+  }
+  .ed__section {
+    position: sticky;
+    top: 80px;
+  }
+}
+
+@media (width >= 768px) {
+  .trending__section {
+    .small__card {
+      flex-basis: 49%;
+    }
+  }
 }

@@ -2,6 +2,10 @@ footer {
   width: 100%;
   background: var(--primary-color);
   color: #fff;
+  .copyright {
+    flex-basis: 100%;
+    text-align: center;
+  }
 }
 .footer__wrapper {
   justify-content: center;

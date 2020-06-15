@@ -6,4 +6,25 @@
     padding-right: 30px;
     padding-bottom: 15px;
   }
+  .slick-arrow {
+    display: none !important;
+    text-align: center;
+    svg {
+      width: 20px;
+    }
+  }
+  .slick-next {
+    right: 30px;
+  }
+  .slick-prev {
+    left: 30px;
+  }
+}
+
+@media (width >= 1200px) {
+  .hslider__wrapper {
+    .slick-arrow {
+      display: flex !important;
+    }
+  }
 }

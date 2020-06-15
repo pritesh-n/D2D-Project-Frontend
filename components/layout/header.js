@@ -4,58 +4,62 @@ import { faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Header = ({ toggleClass, searchTerm, updateSearch, onSearchSubmit }) => {
   return (
     <header>
-      <div className="container header__wrapper">
-        <FontAwesomeIcon
-          icon={faBars}
-          className="menu__icon"
-          onClick={() =>
-            toggleClass(".menu__header", {
-              className: "open",
-              action: "add",
-            })
-          }
-        />
-        <a className="logo__head">
-          <img src="/static/images/logo.svg" />
-        </a>
-        <ul className="menu__header">
+      <div
+        style={{ position: "relative", zIndex: 10, backgroundColor: "#fff" }}
+      >
+        <div className="container header__wrapper">
           <FontAwesomeIcon
-            icon={faTimes}
-            className="close__icon"
+            icon={faBars}
+            className="menu__icon"
             onClick={() =>
               toggleClass(".menu__header", {
                 className: "open",
-                action: "remove",
+                action: "add",
               })
             }
           />
-          <li className="heading">Categories</li>
-          <li>
-            <a href="/entertainment">Entertainment</a>
-          </li>
-          <li>
-            <a href="/travel">Travel</a>
-          </li>
-          <li>
-            <a href="/featured">Featured</a>
-          </li>
-          <li>
-            <a href="/lifestyle">Lifestyle</a>
-          </li>
-        </ul>
-        <FontAwesomeIcon
-          icon={faSearch}
-          className="search__icon"
-          onClick={(e) => {
-            toggleClass(".search__form", {
-              className: "open",
-              action: "toggle",
-            });
-            document.querySelector(".search__form").classList.contains("open")
-              ? document.querySelector(".search__input").focus()
-              : document.querySelector(".search__input").blur();
-          }}
-        />
+          <a className="logo__head" href="/">
+            <img src="/static/images/logo.svg" />
+          </a>
+          <ul className="menu__header">
+            <FontAwesomeIcon
+              icon={faTimes}
+              className="close__icon"
+              onClick={() =>
+                toggleClass(".menu__header", {
+                  className: "open",
+                  action: "remove",
+                })
+              }
+            />
+            <li className="heading">Categories</li>
+            <li>
+              <a href="/entertainment">Entertainment</a>
+            </li>
+            <li>
+              <a href="/travel">Travel</a>
+            </li>
+            <li>
+              <a href="/featured">Featured</a>
+            </li>
+            <li>
+              <a href="/lifestyle">Lifestyle</a>
+            </li>
+          </ul>
+          <FontAwesomeIcon
+            icon={faSearch}
+            className="search__icon"
+            onClick={(e) => {
+              toggleClass(".search__form", {
+                className: "open",
+                action: "toggle",
+              });
+              document.querySelector(".search__form").classList.contains("open")
+                ? document.querySelector(".search__input").focus()
+                : document.querySelector(".search__input").blur();
+            }}
+          />
+        </div>
       </div>
       <form
         className="search__form"

@@ -1,19 +1,32 @@
 import { throttle, map } from "lodash";
+import { DFPManager } from "react-dfp";
+import { forceCheck } from "react-lazyload";
 
 export const visibilityChecker = (selector) => {
   let elems = document.querySelectorAll(selector);
   let siblings = document.querySelectorAll(".post__container .post__card");
+  let visibleSibling = document.querySelector(".post__container .post__card");
+  let prevBodyHeight = document.body.clientHeight;
+  let edTimeoutFlag = false;
   return () => {
-    let visibleSibling = document.querySelector(".post__container .post__card");
+    let prevVisibleSibling = visibleSibling;
     _.map(siblings, (sibling) => {
       if (isVisible(sibling)) {
         visibleSibling = sibling;
       }
     });
+    if (prevVisibleSibling != visibleSibling) {
+      if (!edTimeoutFlag) {
+        DFPManager.refresh();
+        edTimeoutFlag = true;
+        setTimeout(() => {
+          edTimeoutFlag = false;
+        }, 4000);
+      }
+    }
     _.map(elems, (elem) => {
       if (!isVisible(elem)) {
         if (!visibleSibling.previousSibling.classList.contains("inuse")) {
-          console.log(elem);
           placeEdOverElem(elem, visibleSibling.previousSibling);
           visibleSibling.previousSibling.classList.add("inuse");
           if (elem.getAttribute("data-parent")) {
@@ -39,8 +52,22 @@ export const visibilityChecker = (selector) => {
           );
         }
       }
+      if (prevBodyHeight != document.body.clientHeight) {
+        placeEdOverElem(
+          elem,
+          document.getElementById(elem.getAttribute("data-parent"))
+        );
+      }
     });
   };
+};
+
+export const checkEdRefresh = (self) => {
+  if (isVisible(document.getElementById(self.slotId))) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 export const placeEdOverElem = (elem, visibleParent) => {
@@ -69,8 +96,13 @@ export const enableListener = (callback) => {
 
 export const scrollAbsoluteEds = (selector) => {
   let visibilityCheckerCb = visibilityChecker(selector);
-  visibilityCheckerCb(selector);
-  enableListener(visibilityCheckerCb);
+  window.addEventListener("load", (event) => {
+    setTimeout(() => {
+      visibilityCheckerCb(selector);
+      enableListener(visibilityCheckerCb);
+      forceCheck();
+    }, 1000);
+  });
 };
 
 const getXYpos = (elem) => {

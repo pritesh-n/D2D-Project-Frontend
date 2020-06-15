@@ -1,16 +1,18 @@
 import LazyLoad from "react-lazyload";
 import Image from "./Image";
 
-const SmallCard = ({ article }) => {
+const SmallCard = ({ article, showFull }) => {
   return (
     <div className="small__card">
       <LazyLoad once height={200} offset={100}>
-        <Image name={article.image_url} />
+        <a href={`/${article.category.toLowerCase()}/${article.slug}/S1`}>
+          <Image name={article.image_url} showFull={showFull} />
+        </a>
       </LazyLoad>
       <div className="card__info">
         <h3 className="category">{article.category}</h3>
         <h2 className="title">
-          <a href={`/${article.category.toLowerCase()}/${article.slug}`}>
+          <a href={`/${article.category.toLowerCase()}/${article.slug}/S1`}>
             {article.title}
           </a>
         </h2>

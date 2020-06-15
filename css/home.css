@@ -9,3 +9,29 @@
     padding-left: 15px;
   }
 }
+
+@media (width >= 768px) {
+  .trending__section,
+  .latest__section,
+  .popular__section {
+    justify-content: space-between;
+    .section__title {
+      flex-basis: 100%;
+    }
+    .small__card {
+      flex-basis: 49%;
+    }
+  }
+}
+
+@media (width >= 1200px) {
+  .hero__section {
+    width: 1200px;
+    margin: 0px auto;
+    .small__card {
+      .image {
+        height: 750px;
+      }
+    }
+  }
+}

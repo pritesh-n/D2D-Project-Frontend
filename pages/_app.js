@@ -32,11 +32,6 @@ export default class MyApp extends App {
               as="style"
               onLoad="this.onload=null;this.rel='stylesheet'"
             ></link>
-            <link
-              href={`/static/css/${Component.name.toLowerCase()}.css`}
-              rel="stylesheet"
-              key="test"
-            />
             <meta name="robots" content="noindex,nofollow" />
           </Head>
           <Layout componentName={Component.name.toLowerCase()}>
