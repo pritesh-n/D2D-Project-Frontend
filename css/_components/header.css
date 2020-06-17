@@ -59,7 +59,6 @@ header {
   li {
     margin-bottom: 20px;
     a {
-      text-decoration: none;
       font-size: 1.3em;
       font-weight: 600;
       color: var(--primary-color);
@@ -89,5 +88,37 @@ header {
   color: #fff;
   &::placeholder {
     color: #fff;
+  }
+}
+
+@media (width > 1024px) {
+  .menu__header {
+    position: static;
+    transform: none;
+    padding: 0px;
+    width: auto;
+    box-shadow: none;
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+    .heading {
+      display: none;
+    }
+    li {
+      display: inline-block;
+      margin-bottom: 0px;
+      margin-right: 10px;
+      a {
+        font-size: 1em;
+      }
+    }
+  }
+  .menu__icon,
+  .close__icon {
+    display: none;
+  }
+  .logo__head {
+    position: relative;
+    left: -30px;
   }
 }

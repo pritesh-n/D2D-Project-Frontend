@@ -31,6 +31,9 @@
     flex-basis: 100%;
   }
 }
+.right__wrapper {
+  width: 100%;
+}
 
 @media (width >= 1100px) {
   .eds_abs_wrp {

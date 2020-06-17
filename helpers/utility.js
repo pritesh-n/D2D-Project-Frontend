@@ -98,10 +98,11 @@ export const scrollAbsoluteEds = (selector) => {
   let visibilityCheckerCb = visibilityChecker(selector);
   window.addEventListener("load", (event) => {
     setTimeout(() => {
+      DFPManager.load();
       visibilityCheckerCb(selector);
       enableListener(visibilityCheckerCb);
       forceCheck();
-    }, 1000);
+    }, 2000);
   });
 };
 

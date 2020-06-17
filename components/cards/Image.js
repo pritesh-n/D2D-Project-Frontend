@@ -13,7 +13,7 @@ const Image = ({ name, size, showFull }) => {
     ? `${imgBase}_${screen_size}.jpg`
     : defaultSrc;
 
-  if (showFull) imageSrc = imgBase + ".jpg";
+  if (showFull && screen_size != "small") imageSrc = imgBase + ".jpg";
 
   return <img src={imageSrc} className="image" />;
 };

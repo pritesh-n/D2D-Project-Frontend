@@ -1,0 +1,35 @@
+@import "./_core/base.css";
+@import "./_components/roundcard.css";
+@import "./_components/listcard.css";
+
+.section__title {
+  text-transform: capitalize;
+}
+.right__wrapper {
+  width: 100%;
+}
+
+@media (width >= 1100px) {
+  .left__wrapper {
+    display: inline-block;
+    width: calc(100% - 300px);
+    vertical-align: top;
+    padding-right: 20px;
+  }
+  .right__wrapper {
+    display: inline-block;
+    width: 300px;
+  }
+  .section__title {
+    font-size: 1.5em;
+  }
+  .round__card {
+    margin-bottom: 15px;
+    .title {
+      font-size: 0.9em;
+    }
+    .category {
+      font-size: 0.8em;
+    }
+  }
+}

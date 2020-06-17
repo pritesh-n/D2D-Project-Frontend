@@ -10,7 +10,9 @@ const SmallCard = ({ article, showFull }) => {
         </a>
       </LazyLoad>
       <div className="card__info">
-        <h3 className="category">{article.category}</h3>
+        <h3 className="category">
+          <a href={`/${article.category.toLowerCase()}`}>{article.category}</a>
+        </h3>
         <h2 className="title">
           <a href={`/${article.category.toLowerCase()}/${article.slug}/S1`}>
             {article.title}

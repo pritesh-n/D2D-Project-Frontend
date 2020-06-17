@@ -1,17 +1,17 @@
 import LazyLoad from "react-lazyload";
 import Image from "./Image";
 
-const RoundCard = ({ article, hideImage }) => {
+const ListCard = ({ article }) => {
   return (
-    <div className="round__card">
-      {hideImage ? null : (
-        <LazyLoad once height={80} offset={100}>
-          <a href={`/${article.category.toLowerCase()}/${article.slug}/S1`}>
-            <Image name={article.image_url} size="thumb" />
-          </a>
-        </LazyLoad>
-      )}
-
+    <div className="list__card">
+      <LazyLoad once height={200} offset={100}>
+        <a
+          href={`/${article.category.toLowerCase()}/${article.slug}/S1`}
+          className="image__wrapper"
+        >
+          <Image name={article.image_url} size="small" />
+        </a>
+      </LazyLoad>
       <div className="card__info">
         <h3 className="category">
           <a href={`/${article.category.toLowerCase()}`}>{article.category}</a>
@@ -26,4 +26,4 @@ const RoundCard = ({ article, hideImage }) => {
   );
 };
 
-export default RoundCard;
+export default ListCard;
