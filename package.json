@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev -p 4001",
     "start": "next start",
-    "build": "./node_modules/.bin/gulp build --production=true && next build",
+    "build": "./node_modules/.bin/gulp build --production=true && next build && next export",
     "watch": "./node_modules/.bin/gulp watch",
     "build:prod": "./node_modules/.bin/gulp build --production=true",
     "export": "next export"
