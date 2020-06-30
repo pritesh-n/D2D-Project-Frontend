@@ -8,7 +8,8 @@
     "start": "next start",
     "build": "./node_modules/.bin/gulp build --production=true && next build",
     "watch": "./node_modules/.bin/gulp watch",
-    "build:prod": "./node_modules/.bin/gulp build --production=true"
+    "build:prod": "./node_modules/.bin/gulp build --production=true",
+    "export": "next export"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
