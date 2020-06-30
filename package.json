@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 4001",
-    "start": "set NODE_ENV=production&&next start",
+    "start": "next start",
     "build": "./node_modules/.bin/gulp build --production=true && next build",
     "watch": "./node_modules/.bin/gulp watch",
     "build:prod": "./node_modules/.bin/gulp build --production=true"
