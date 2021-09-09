@@ -11,7 +11,7 @@ const Home = ({ data }) => {
   return (
     <>
       <Head>
-        <link href={`/static/css/home.css`} rel="stylesheet" />
+        <link href={`../static/css/home.css`} rel="stylesheet" />
       </Head>
       <Section title="Top Picks" classes="hero__section">
         <Hero results={articles.splice(0, 5)} />
